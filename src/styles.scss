@@ -1,0 +1,79 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import "styles/primary.scss";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    background-color: $color-white-shade !important;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.container{
+    padding: 1rem;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px !important;
+    font-size: 0.9em;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: -.5px;
+    cursor: pointer;
+    gap: 0 0.6rem;
+    padding: 12px 18px;
+}
+
+// .filter__btn{
+//     color: #212529;
+//     background: $color-white;
+//     border: 1px solid $color-primary;
+// }
+
+.primary__btn{
+    color: #212529;
+    background: $color-primary;
+    border: 1px solid $color-primary;
+}
+
+.page__heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #d9dbe9;
+    .buttons__container{
+        display: flex;
+        gap: 1rem;
+    }
+}
+
+.page__title{
+    font-weight: 600;
+    font-size: 1.5em;
+    line-height: 30px;
+    letter-spacing: -.5px;
+    color: #14142b;
+}
+
+.page__sub__title{
+    font-size: 0.85em;
+    margin-top: 4px;
+    font-weight: 400;
+    letter-spacing: -.2px;
+}
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

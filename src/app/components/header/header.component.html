@@ -1,0 +1,20 @@
+<header>
+    <nav>
+        <div class="nav__icons__container">
+            <div class="logo" routerLink="/dashboard">
+                <i class="fa-solid fa-store"></i>
+            </div>
+            <div class="menu">
+                <i class="fa-solid pointer" [ngClass]="{'fa-bars': showMenuIcon,'fa-xmark': !showMenuIcon}" (click)="showMenuIcon = !showMenuIcon"></i>
+            </div>
+        </div>
+        <div class="nav__links__container" [ngClass]="{'show__nav__links': !showMenuIcon}">
+            <div class="nav__link" routerLink="/orders" routerLinkActive="active__link">
+                orders
+            </div>
+            <div class="nav__link" routerLink="/customers" routerLinkActive="active__link">
+                customers
+            </div>
+        </div>
+    </nav>
+</header>

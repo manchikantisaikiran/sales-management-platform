@@ -1,0 +1,80 @@
+<div class="container">
+    <section class="page__heading">
+        <div>
+            <div class="page__title">Orders</div>
+            <div class="page__sub__title">Track all your orders at one place</div>
+        </div>
+        <div class="buttons__container">
+            <!-- <button class="filter__btn">
+                <i class="fa-solid fa-filter"></i>
+                <span>Filter</span>
+            </button> -->
+            <button class="primary__btn" (click)="openSaveOrdersModal()">
+                <i class="fa-solid fa-plus"></i>
+                <span>Add New Order</span>
+            </button>
+        </div>
+    </section>
+    <section class="page__content">
+        <div class="page__content__tabs">
+            <div class="tab" [ngClass]="{'active': currentTab == orderStatusEnum.Requested || currentTab == orderStatusEnum.In_transist}" (click)="getOrdersOf('ongoing')">Ongoing</div>
+            <div class="tab" [ngClass]="{'active': currentTab == orderStatusEnum.Delivered}" (click)="getOrdersOf('previous')">Previous</div>
+            <div class="tab" [ngClass]="{'active': currentTab == orderStatusEnum.Cancelled}" (click)="getOrdersOf('cancelled')">Cancelled</div>
+            <div class="tab" [ngClass]="{'active': currentTab == orderStatusEnum.Returned}" (click)="getOrdersOf('returned')">Returned</div>
+        </div>
+        <div class="orders__container">
+            <ng-container *ngFor="let order of orders">
+                <div class="order__card">
+                    <div class="card__top__content">
+                        <div class="order__item">
+                            <div class="order__label">Id</div>
+                            <div class="order__value">{{order.id}}</div>
+                        </div>
+                        <div class="order__item">
+                            <div class="order__label">Order Date</div>
+                            <div class="order__value">{{order.order_date}}</div>
+                        </div>
+                        <div class="order__item">
+                            <div class="order__label">Price</div>
+                            <div class="order__value">{{order.order_price}}</div>
+                        </div>
+                        <div class="actions__icon pointer">
+                            <i class="fa fa-ellipsis-vertical menu__icon" (click)="order.showOrderActions = !order.showOrderActions"></i>
+                            <ul class="menu-list" *ngIf="order.showOrderActions">
+                                <li (click)="openSaveOrdersModal(order)">
+                                    <a class="btn btn-default">
+                                        <i class="fa fa-pen-to-square"></i>
+                                        <span>Edit Order</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card__bottom__content">
+                        <div class="order__item">
+                            <div class="order__label">Customer Name</div>
+                            <div class="order__value">{{order.customer.name}}</div>
+                        </div>
+                        <div class="order__item">
+                            <div class="order__label">Customer Email</div>
+                            <div class="order__value">{{order.customer.email}}</div>
+                        </div>
+                        <div class="order__item">
+                            <div class="order__label">Order Status</div>
+                            <div class="order__value" style="white-space: nowrap;"
+                            [ngClass]="{
+                                'orange': order.order_status == orderStatusEnum.In_transist, 
+                                'green': order.order_status == orderStatusEnum.Delivered, 
+                                'red': order.order_status == orderStatusEnum.Cancelled, 
+                                'blue': order.order_status == orderStatusEnum.Returned 
+                            }">{{order.order_status | titlecase}}</div>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+        <ng-container *ngIf="!orders.length">
+            <div class="text-center">No orders Found!</div>
+        </ng-container>
+    </section>
+</div>

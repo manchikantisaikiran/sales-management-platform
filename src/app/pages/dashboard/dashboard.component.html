@@ -1,0 +1,56 @@
+<div class="container">
+    <section class="page__heading">
+        <div>
+            <div class="page__title">Dashboard</div>
+            <div class="page__sub__title">All your stats will be shown here to you</div>
+        </div>
+        <!-- <div>
+            <button class="filter__btn">
+                <i class="fa-solid fa-filter"></i>
+                <span>Filter</span>
+            </button>
+        </div> -->
+    </section>
+    <section class="page__content">
+        <div class="sales__insights__numbers">
+            <div class="sales__count__card">
+                <div class="icon__box">
+                    <i class="fa fa-shopping-cart"></i>
+                </div>
+                <div>
+                    <div class="sales__count">{{totalOrdersCount}}</div>
+                    <div class="sales__card__description">No. of Total Orders</div>
+                </div>
+            </div>
+            <div class="sales__count__card">
+                <div class="icon__box">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+                <div>
+                    <div class="sales__count">{{allCustomers?.length}}</div>
+                    <div class="sales__card__description">No. of Customers</div>
+                </div>
+            </div>
+            <div class="sales__count__card">
+                <div class="icon__box">
+                    <i class="fa-solid fa-star"></i>
+
+                </div>
+                <div>
+                    <div class="sales__count">480</div>
+                    <div class="sales__card__description">No. of Customers Reviewed</div>
+                </div>
+            </div>
+        </div>
+        <div class="sales__insights__charts">
+            <div class="chart__card">
+                <div class="chart__title">Customer Ratings</div>
+                <div id="customer__ratings__chart" class="customer__ratings__chart"></div>
+            </div>
+            <div class="chart__card">
+                <div class="chart__title">New Customer Visits</div>
+                <div id="new__customer__visits__chart" class="new__customer__visits__chart"></div>
+            </div>
+        </div>
+    </section>
+</div>
