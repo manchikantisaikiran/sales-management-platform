@@ -22,14 +22,14 @@ export class DashboardComponent implements OnInit {
 
   orders: Order[] | null = [];
   totalOrdersCount = 0;
-  allCustomers: Order[] | undefined = [];
+  allCustomersCount = 0;
   allCustomersMappings: AllCustomerMappings = {};
   customerVisitMappings: CustomerVisitMappings = {};
 
   constructor(private localStrorageService: LocalStorageService) {
     this.orders = this.localStrorageService.readLocalStorage('orders');
 
-    this.allCustomers = this.orders?.filter(order => {
+    const allCustomers = this.orders?.filter(order => {
       const date = order.order_date;
       if (!this.customerVisitMappings[date]) {
         this.customerVisitMappings[date] = 1;
@@ -45,7 +45,7 @@ export class DashboardComponent implements OnInit {
       }
     })
     this.totalOrdersCount = Object.keys(this.customerVisitMappings).length;
-    
+    this.allCustomersCount = allCustomers?.length || 0;
   }
 
   fetchOrders() {
