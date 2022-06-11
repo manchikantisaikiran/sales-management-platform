@@ -77,7 +77,10 @@ export class OrdersComponent implements OnInit {
   }
 
   fetchOrders() {
-    this.ordersFromDB = this.localStrorageService.readLocalStorage('orders');
+    const orders = this.localStrorageService.readLocalStorage('orders');
+    if(orders){
+      this.ordersFromDB = orders;
+    }
     this.getOrdersOf('ongoing');
   }
 
