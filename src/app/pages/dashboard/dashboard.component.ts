@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { LocalStorageService } from 'src/app/services/local-storage.service';
-import { Order } from 'src/app/types/interface';
+import { LocalStorageService } from '../../services/local-storage.service';
+import { Order } from '../../types/interface';
 
 declare let Plotly: any;
 

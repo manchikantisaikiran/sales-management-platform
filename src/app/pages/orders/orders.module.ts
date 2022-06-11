@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { OrdersComponent } from './orders.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
-import { SaveOrdersComponent } from 'src/app/modals/save-orders/save-orders.component';
+import { SaveOrdersComponent } from '../../modals/save-orders/save-orders.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const routes = [

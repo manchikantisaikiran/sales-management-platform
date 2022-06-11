@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { NgbActiveModal, NgbDateAdapter } from '@ng-bootstrap/ng-bootstrap';
-import { Order } from 'src/app/types/interface';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { Order } from '../../types/interface';
 
 @Component({
   selector: 'app-save-orders',

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { SaveOrdersComponent } from 'src/app/modals/save-orders/save-orders.component';
-import { LocalStorageService } from 'src/app/services/local-storage.service';
-import { OrderStatusEnum } from 'src/app/types/enum';
-import { Order } from 'src/app/types/interface';
+import { SaveOrdersComponent } from '../../modals/save-orders/save-orders.component';
+import { LocalStorageService } from '../../services/local-storage.service';
+import { OrderStatusEnum } from '../../types/enum';
+import { Order } from '../../types/interface';
 
 @Component({
   selector: 'app-orders',
